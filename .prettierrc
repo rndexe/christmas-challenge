@@ -1,0 +1,19 @@
+{
+    "semi": true,
+    "useTabs": false,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "overrides": [
+        {
+            "files": [
+                "*.json",
+                "*.html",
+                "*.yaml",
+                ".prettierrc"
+            ],
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
+}
