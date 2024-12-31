@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useState, useMemo, useRef } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { Physics, RigidBody, CuboidCollider } from '@react-three/rapier';
 import { Environment, OrbitControls, Sky } from '@react-three/drei';
 import {
@@ -11,15 +11,21 @@ import {
     Vector3,
     Quaternion,
     MathUtils,
+    TextureLoader,
+    RepeatWrapping,
 } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import Tree from './tree';
+import { Fence } from './fence';
 
-const loader = new GLTFLoader();
-const stickData = await loader.loadAsync('/lowpoly_stick/scene.gltf');
-const stick = stickData.scene.children[0];
+let stick;
 
 export default function App() {
     const [gameState, setgameState] = useState(0);
+    const loader = new GLTFLoader();
+    loader.loadAsync('/lowpoly_stick/scene.gltf').then((data) => {
+        stick = data.scene.children[0];
+    });
 
     function changeState(newState) {
         setgameState(newState);
@@ -42,7 +48,7 @@ export default function App() {
                         changeState={changeState}
                         gameState={gameState}
                     />
-                    <Sky />
+                    <Sky inclination={1} azimuth={180} />
                     <Environment preset="forest" environmentIntensity={0.5} />
                 </Suspense>
             </Canvas>
@@ -102,14 +108,13 @@ function SetCamera() {
     const camera = useThree((state) => state.camera);
 
     useEffect(() => {
-        camera.position.set(0, 3, 8);
+        camera.position.set(0, 2, 8);
 
         camera.lookAt(0, 2, 0);
         camera.fov = 40;
         camera.updateProjectionMatrix();
     }, [camera]);
 
-    useFrame(() => {});
     return null;
 }
 
@@ -217,6 +222,7 @@ function Snowball({ id, position, size, gameState, changeState }) {
         hand.quaternion.copy(quaternion);
         const s = MathUtils.randFloat(0.1, 0.08);
         hand.scale.set(s, s, s);
+        hand.castShadow = true;
         ref.current.attach(hand);
         setCount(count + 1);
         console.log(count);
@@ -267,11 +273,31 @@ function Snowball({ id, position, size, gameState, changeState }) {
 
 function Ground({ groundRef }) {
     return (
-        <RigidBody type="fixed" ref={groundRef} userData={{ isGround: true }}>
-            <mesh receiveShadow>
-                <boxGeometry args={[100, 1, 100]} />
+        <RigidBody
+            type="fixed"
+            ref={groundRef}
+            colliders={false}
+            userData={{ isGround: true }}
+        >
+            <CuboidCollider args={[20, 0, 20]} />
+            <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
+                <planeGeometry args={[50, 50]} />
                 <meshStandardMaterial color="white" />
             </mesh>
+            <group position-x={5}>
+                <Tree position={[2, 0, -10]} rotation-y={0.1} />
+                <Tree position={[5, 0, -12]} rotation-y={0.2} />
+                <Tree position={[5, 0, -8]} rotation-y={0.9} />
+            </group>
+            <group position-z={-5}>
+                <Tree position={[2, 0, -10]} rotation-y={0.1} />
+                <Tree position={[5, 0, -12]} rotation-y={0.2} />
+                <Tree position={[5, 0, -8]} rotation-y={0.9} />
+            </group>
+
+            <Fence position={[-11, 0, -8]} rotation-y={0.8} scale={0.005} />
+            <Fence position={[-8, 0, -10]} rotation-y={0.8} scale={0.005} />
+            <Fence position={[-5, 0, -12]} rotation-y={0.8} scale={0.005} />
         </RigidBody>
     );
 }

@@ -1,0 +1,449 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 350,
+      "max": [
+        4.852863788604736,
+        1.2323052883148193,
+        1.0
+      ],
+      "min": [
+        -1.0727338790893555,
+        -1.165970802307129,
+        -1.012688159942627
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 4200,
+      "componentType": 5126,
+      "count": 350,
+      "max": [
+        0.9992826581001282,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 350,
+      "max": [
+        0.9286203980445862,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.551225483417511
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 2800,
+      "componentType": 5126,
+      "count": 350,
+      "max": [
+        0.9286203980445862,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.551225483417511
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 552,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 8400,
+      "componentType": 5126,
+      "count": 432,
+      "max": [
+        5.376964569091797,
+        1.657859206199646,
+        0.9319325089454651
+      ],
+      "min": [
+        -3.280919075012207,
+        -1.6708251237869263,
+        -0.9733821153640747
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 13584,
+      "componentType": 5126,
+      "count": 432,
+      "max": [
+        0.9677199721336365,
+        0.9963362216949463,
+        0.9999985694885254
+      ],
+      "min": [
+        -0.9677199721336365,
+        -0.9963362216949463,
+        -0.9999973773956299
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 5600,
+      "componentType": 5126,
+      "count": 432,
+      "max": [
+        1.0,
+        0.7652924656867981
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 9056,
+      "componentType": 5126,
+      "count": 432,
+      "max": [
+        1.0,
+        0.7652924656867981
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 2208,
+      "componentType": 5125,
+      "count": 648,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Hard_wall (https://sketchfab.com/benraupp)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/fence-lowpoly-efc9ccd498d8492fb64dd9bd42429a00",
+      "title": "Fence Lowpoly"
+    },
+    "generator": "Sketchfab-12.64.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 4800,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 12512,
+      "byteOffset": 4800,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 18768,
+      "byteOffset": 17312,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 36080,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Material.007",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.592574,
+          0.155392,
+          0.0409754,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8239417257461427
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.006",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.8,
+          0.277407,
+          0.0562424,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8239417257461427
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Cube.002_Material.007_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2,
+            "TEXCOORD_1": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Cube.002_Material.006_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TEXCOORD_0": 7,
+            "TEXCOORD_1": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Fence.fbx"
+    },
+    {
+      "children": [
+        3,
+        6,
+        9
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5
+      ],
+      "matrix": [
+        0.9176128143673556,
+        35.752972664784565,
+        0.2512705012128623,
+        -0.0,
+        -0.18393780302345977,
+        0.17672212528197115,
+        -24.473854271331287,
+        -0.0,
+        373.1430095950026,
+        -9.55665425302341,
+        -2.8734328834760863,
+        -0.0,
+        -121.5338363647461,
+        65.73967742919922,
+        -19.846296310424805,
+        1.0
+      ],
+      "name": "Cube.002"
+    },
+    {
+      "mesh": 0,
+      "name": "Cube.002_Material.007_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Cube.002_Material.006_0"
+    },
+    {
+      "children": [
+        7
+      ],
+      "matrix": [
+        99.57929035324199,
+        -8.63078667621745,
+        3.078060118703863,
+        0.0,
+        8.62860483873202,
+        99.62683937868675,
+        0.2039113271138737,
+        0.0,
+        -3.0841726914849135,
+        0.06254018230881345,
+        99.95240087989806,
+        0.0,
+        782.8729858398438,
+        -388.0306396484375,
+        -460.1797180175781,
+        1.0
+      ],
+      "name": "Hemi.001"
+    },
+    {
+      "children": [
+        8
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Object_7"
+    },
+    {
+      "name": "Object_8"
+    },
+    {
+      "children": [
+        10
+      ],
+      "matrix": [
+        -99.31358076885432,
+        -11.43709540273263,
+        2.4506169870136563,
+        0.0,
+        10.40291588328641,
+        -76.79012820787936,
+        63.20645181421526,
+        0.0,
+        -5.347150676417362,
+        63.02753100603685,
+        77.45282332365758,
+        0.0,
+        782.8729858398438,
+        -388.0306396484375,
+        -460.1797180175781,
+        1.0
+      ],
+      "name": "Hemi"
+    },
+    {
+      "children": [
+        11
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Object_10"
+    },
+    {
+      "name": "Object_11"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

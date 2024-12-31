@@ -1,0 +1,11 @@
+Model Information:
+* title:	Fence Lowpoly
+* source:	https://sketchfab.com/3d-models/fence-lowpoly-efc9ccd498d8492fb64dd9bd42429a00
+* author:	Hard_wall (https://sketchfab.com/benraupp)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Fence Lowpoly" (https://sketchfab.com/3d-models/fence-lowpoly-efc9ccd498d8492fb64dd9bd42429a00) by Hard_wall (https://sketchfab.com/benraupp) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
