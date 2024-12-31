@@ -11,14 +11,12 @@ import {
     Vector3,
     Quaternion,
     MathUtils,
-    TextureLoader,
-    RepeatWrapping,
 } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import Tree from './tree';
 import { Fence } from './fence';
-import audio from '/music.mp3?url'
-import model from '/lowpoly_stick/scene.gltf?url'
+import audio from '/music.mp3?url';
+import model from '/lowpoly_stick/scene.gltf?url';
 
 let stick;
 
@@ -115,8 +113,14 @@ function SetCamera() {
         camera.lookAt(0, 2, 0);
         camera.fov = 40;
         camera.updateProjectionMatrix();
-    }, [camera]);
+    }, []);
 
+    useFrame((state, delta) => {
+        camera.position.lerp(
+            { x: -state.pointer.x/4, y: 1.5+ state.pointer.y/4, z: 8 },
+            0.1
+        );
+    });
     return null;
 }
 
