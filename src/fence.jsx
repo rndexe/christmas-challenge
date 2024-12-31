@@ -9,8 +9,10 @@ Title: Fence Lowpoly
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
+import model from '/fence_lowpoly/scene.gltf?url'
+
 export function Fence(props) {
-  const { nodes, materials } = useGLTF('/fence_lowpoly/scene.gltf')
+  const { nodes, materials } = useGLTF(model)
   return (
     <group {...props} dispose={null}>
       <group
@@ -34,5 +36,5 @@ export function Fence(props) {
   )
 }
 
-useGLTF.preload('/fence_lowpoly/scene.gltf')
+useGLTF.preload(model)
 

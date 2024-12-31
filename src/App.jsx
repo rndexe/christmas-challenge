@@ -17,13 +17,15 @@ import {
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import Tree from './tree';
 import { Fence } from './fence';
+import audio from '/music.mp3?url'
+import model from '/lowpoly_stick/scene.gltf?url'
 
 let stick;
 
 export default function App() {
     const [gameState, setgameState] = useState(0);
     const loader = new GLTFLoader();
-    loader.loadAsync('/lowpoly_stick/scene.gltf').then((data) => {
+    loader.loadAsync(model).then((data) => {
         stick = data.scene.children[0];
     });
 
@@ -304,7 +306,7 @@ function Ground({ groundRef }) {
 
 function MusicButton() {
     const [isPlaying, setIsPlaying] = useState(false);
-    const audioRef = useRef(new Audio('/music.mp3'));
+    const audioRef = useRef(new Audio(audio));
 
     const handleButtonClick = () => {
         if (isPlaying) {
