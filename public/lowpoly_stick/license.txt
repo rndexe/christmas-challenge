@@ -1,0 +1,8 @@
+Model Information:
+* title:	Lowpoly Stick
+* source:	https://sketchfab.com/3d-models/lowpoly-stick-3a4e611d5ae641a986c5604950818ed2
+* author:	Andrxano (https://sketchfab.com/andrxano)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
