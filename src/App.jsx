@@ -1,7 +1,7 @@
-import { Suspense, useEffect, useState, useMemo, useRef } from 'react';
-import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber';
+import { Suspense, useEffect, useState, useRef } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Physics, RigidBody, CuboidCollider } from '@react-three/rapier';
-import { Environment, OrbitControls, Sky } from '@react-three/drei';
+import { Environment, Sky, Text, Float, Sparkles } from '@react-three/drei';
 import {
     MeshBasicMaterial,
     Mesh,
@@ -17,6 +17,7 @@ import Tree from './tree';
 import { Fence } from './fence';
 import audio from '/music.mp3?url';
 import model from '/lowpoly_stick/scene.gltf?url';
+import font from '/Rouge_Script/RougeScript-Regular.ttf?url';
 
 let stick;
 
@@ -48,6 +49,8 @@ export default function App() {
                         changeState={changeState}
                         gameState={gameState}
                     />
+                    <Happy visible={gameState == 4} />
+
                     <Sky inclination={1} azimuth={180} />
                     <Environment preset="forest" environmentIntensity={0.5} />
                 </Suspense>
@@ -59,7 +62,7 @@ export default function App() {
                     bottom: '2%',
                     width: '100%',
                     textAlign: 'center',
-                    color: 'maroon',
+                    color: '#b91c1c',
                 }}
             >
                 <h1
@@ -67,6 +70,7 @@ export default function App() {
                         fontSize: '3rem',
                         fontWeight: '400',
                         marginBlock: '1rem',
+                        textShadow: '#454545 1px 2px',
                     }}
                 >
                     {gameState == 0
@@ -77,7 +81,7 @@ export default function App() {
                         ? 'Put on the nose'
                         : gameState == 3
                         ? 'Stick in the hands'
-                        : 'Merry Christmas and a Happy new year!'}
+                        : ''}
                 </h1>
                 {gameState == 1 && (
                     <button
@@ -88,8 +92,8 @@ export default function App() {
                             fontFamily: 'Bangers',
                             fontSize: '2rem',
                             padding: '0.5rem 1.75rem',
-                            border: '4px solid green',
-                            color: 'maroon',
+                            border: '4px solid #b91c1c',
+                            color: '#65a30d',
                             cursor: 'pointer',
                         }}
                     >
@@ -104,6 +108,29 @@ export default function App() {
     );
 }
 
+function Happy({visible}) {
+    return (
+        <group visible={visible}>
+            {/* <Sparkles color={'#65a30d'} scale={(10, 1, 1)} count={1000} /> */}
+            <Text
+                color={'#dc2626'}
+                scale={0.5}
+                position={[0, 1, 3]}
+                font={font}
+            >
+                Merry Christmas!
+            </Text>
+            <Text
+                color={'#dc2626'}
+                scale={0.5}
+                position={[0, 0.5, 3]}
+                font={font}
+            >
+                And a Happy New Year!
+            </Text>
+        </group>
+    );
+}
 function SetCamera() {
     const camera = useThree((state) => state.camera);
 
@@ -117,7 +144,7 @@ function SetCamera() {
 
     useFrame((state, delta) => {
         camera.position.lerp(
-            { x: -state.pointer.x/4, y: 1.5+ state.pointer.y/4, z: 8 },
+            { x: -state.pointer.x / 4, y: 1.5 + state.pointer.y / 4, z: 8 },
             0.1
         );
     });
@@ -231,7 +258,6 @@ function Snowball({ id, position, size, gameState, changeState }) {
         hand.castShadow = true;
         ref.current.attach(hand);
         setCount(count + 1);
-        console.log(count);
     }
 
     function putNose(event) {
