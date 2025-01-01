@@ -15,16 +15,13 @@ import {
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import Tree from './tree';
 import { Fence } from './fence';
-import audio from '/music.mp3?url';
-import model from '/lowpoly_stick/scene.gltf?url';
-import font from '/Rouge_Script/RougeScript-Regular.ttf?url';
 
 let stick;
 
 export default function App() {
     const [gameState, setgameState] = useState(0);
     const loader = new GLTFLoader();
-    loader.loadAsync(model).then((data) => {
+    loader.loadAsync('./lowpoly_stick/scene.gltf').then((data) => {
         stick = data.scene.children[0];
     });
 
@@ -108,7 +105,7 @@ export default function App() {
     );
 }
 
-function Happy({visible}) {
+function Happy({ visible }) {
     return (
         <group visible={visible}>
             {/* <Sparkles color={'#65a30d'} scale={(10, 1, 1)} count={1000} /> */}
@@ -116,7 +113,7 @@ function Happy({visible}) {
                 color={'#dc2626'}
                 scale={0.5}
                 position={[0, 1, 3]}
-                font={font}
+                font={'./Rouge_Script/RougeScript-Regular.ttf'}
             >
                 Merry Christmas!
             </Text>
@@ -124,7 +121,7 @@ function Happy({visible}) {
                 color={'#dc2626'}
                 scale={0.5}
                 position={[0, 0.5, 3]}
-                font={font}
+                font={'./Rouge_Script/RougeScript-Regular.ttf'}
             >
                 And a Happy New Year!
             </Text>
@@ -336,7 +333,7 @@ function Ground({ groundRef }) {
 
 function MusicButton() {
     const [isPlaying, setIsPlaying] = useState(false);
-    const audioRef = useRef(new Audio(audio));
+    const audioRef = useRef(new Audio('./music.mp3'));
 
     const handleButtonClick = () => {
         if (isPlaying) {

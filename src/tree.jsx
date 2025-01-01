@@ -8,11 +8,9 @@ Title: Low poly snow tree
 
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
-import model from '/tree/scene.gltf?url'
-
 
 export default function Tree(props) {
-    const { nodes, materials } = useGLTF(model);
+    const { nodes, materials } = useGLTF('./tree/scene.gltf');
     return (
         <group {...props} dispose={null}>
             <group position={[0, 1.077, 0]} rotation={[0, 0, 0.283]}>
@@ -41,4 +39,4 @@ export default function Tree(props) {
     );
 }
 
-useGLTF.preload(model);
+useGLTF.preload('./tree/scene.gltf');
