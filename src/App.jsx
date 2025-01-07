@@ -141,7 +141,7 @@ function SetCamera() {
 
     useFrame((state, delta) => {
         camera.position.lerp(
-            { x: -state.pointer.x / 4, y: 1.5 + state.pointer.y / 4, z: 8 },
+            { x: state.pointer.x / 4, y: 1.5 + state.pointer.y / 4, z: 8 },
             0.1
         );
     });
